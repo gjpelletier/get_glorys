@@ -1,8 +1,5 @@
 Download of GLORYS model outputs using Python
 
-----------
-get_glorys_reanalysis_daily.py 
-
 Python script to extract daily GLORYS model output
 from the Global Ocean Physics Reanalysis between 1/1/1993 to 12/31/2020
 
@@ -11,7 +8,6 @@ This script is used to download from:
 https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/download?dataset=cmems_mod_glo_phy_my_0.083_P1D-m
 
 by Greg Pelletier (gjpelletier@gmail.com) for standalone use (https://github.com/gjpelletier/get_glorys)
-----------
 
 INSTRUCTIONS
 
