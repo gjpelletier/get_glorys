@@ -9,7 +9,7 @@
 
 # https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/download?dataset=cmems_mod_glo_phy_my_0.083_P1D-m
 
-# by Greg Pelletier (gjpelletier@gmail.com) for standalone use (https://github.com/gjpelletier/get_glorys)
+# by Greg Pelletier (gjpelletier@gmail.com) (https://github.com/gjpelletier/get_glorys)
 # ----------
 
 # - - -
@@ -92,8 +92,8 @@ east = -122             # -180 to 180 or 0 to 360 degE
 
 # -  
 # Specify the date_start and number_of_days from 1/1/1993 - 12/31/2020
-date_start = '2020-10-01 00:00:00'      # ISO formatted string for the starting datetime for the data to be downloaded (starting hh:mm:ss should be 00:00:00)
-number_of_days = 92
+date_start = '2020-01-01 00:00:00'      # ISO formatted string for the starting datetime for the data to be downloaded (starting hh:mm:ss should be 00:00:00)
+number_of_days = 31
 
 # - - -
 # specify the directory where the extracted nc files will be saved:
@@ -129,7 +129,6 @@ class MotuOptions:
 
 # - - -
 # make function to extract the glorys data during the loop through all datetimes
-# def get_extraction(dt, out_fn, var_list):
 def get_extraction(dt, data_request_options_dict):
     # get the data and save as a netcdf file
     counter = 1
@@ -140,7 +139,9 @@ def get_extraction(dt, data_request_options_dict):
         try:
             motuclient.motu_api.execute_request(MotuOptions(data_request_options_dict))
         except timeout:
-            print('  *Socket timed out')
+            print('  *Socket timed out, trying again')
+        except:
+            print('  *Something went wrong, trying again')      
         else:
             got_file = True
             print('  Downloaded data')
