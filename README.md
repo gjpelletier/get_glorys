@@ -1,4 +1,4 @@
-Download of GLORYS model outputs using Python or Jupyter Notebooks in Google Colab
+Download of GLORYS model outputs using Python, iPython, or Jupyter Notebooks in Google Colab
 
 Scripts to extract daily GLORYS model output
 from the Global Ocean Physics Reanalysis between 1/1/1993 to 12/31/2020
