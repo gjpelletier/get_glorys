@@ -16,7 +16,7 @@ Two versions of the scripts are available as follows for use with different comp
 
 INSTRUCTIONS
 
-Before using this script, it is first necessary to establish a free account with https://data.marine.copernicus.eu/
+Before using these scripts, it is first necessary to establish a free account with https://data.marine.copernicus.eu/
 Your username will be assigned when you establish your account. Your password should not include special characters.
 
 After you have established an account, the following are the instructions for using this script:
