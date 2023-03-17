@@ -9,6 +9,10 @@ These scripts are used to download from:
 
 https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/download?dataset=cmems_mod_glo_phy_my_0.083_P1D-m
 
+Here is more info about GLORYS by Mercator Ocean International:
+
+https://www.mercator-ocean.eu/en/ocean-science/glorys/
+
 Two versions of the scripts are available as follows for use with different computing platforms:
 
 - get_glorys_reanalysis_daily.py is written for use in Python or iPython
