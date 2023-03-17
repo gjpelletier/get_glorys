@@ -1,13 +1,18 @@
-Download of GLORYS model outputs using Python
+Download of GLORYS model outputs using Python or Jupyter Notebooks in Google Colab
 
-Python script to extract daily GLORYS model output
+Scripts to extract daily GLORYS model output
 from the Global Ocean Physics Reanalysis between 1/1/1993 to 12/31/2020
 
-This script is used to download from:
+by Greg Pelletier (gjpelletier@gmail.com) for standalone use (https://github.com/gjpelletier/get_glorys)
+
+These scripts are used to download from:
 
 https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/download?dataset=cmems_mod_glo_phy_my_0.083_P1D-m
 
-by Greg Pelletier (gjpelletier@gmail.com) for standalone use (https://github.com/gjpelletier/get_glorys)
+Two versions of the scripts are available as follows for use with different computing platforms:
+
+- get_glorys_reanalysis_daily.py is written for use in Python or iPython
+- get_glorys_reanalysis_daily.ipynb is a Jupyter notebook that is set up as Google Colab notebook to save glorys outputs in netcdf files directly to your Google drive
 
 INSTRUCTIONS
 
@@ -26,7 +31,7 @@ After you have established an account, the following are the instructions for us
 4) During execution you sould see the progress of each daily file that is extracted during the period of interest 
    from beginning to end. Each nc file name has the format glorys_yyyy_MM_dd.nc to indicate the date stamp
 
-This python script uses the manual dictionary method that is described at the following Web page:
+These script use the manual dictionary method that is described at the following Web page:
 https://help.marine.copernicus.eu/en/articles/5211063-how-to-use-the-motuclient-within-python-environment
 - - -
 Notes for installing motuclient if you have not yet installed it:
@@ -34,9 +39,9 @@ Notes for installing motuclient if you have not yet installed it:
   Otherwise (if there is no previous installation of motuclient), 
   type in the following:
      $ python -m pip install motuclient
-  That command should install and display motuclient package v1.8.4 (Oct. 2019). 
+  That command should install and display motuclient package v1.8.8
   To display the version:
      $ python -m motuclient --version
-  If that command does not return: "motuclient-python v1.8.X" ("X" >= "4"), 
+  If that command does not return: "motuclient-python v1.8.X" ("X" >= "8"), 
   then type in the following:
-    $ python -m pip install motuclient==1.8.4
+    $ python -m pip install motuclient==1.8.8
