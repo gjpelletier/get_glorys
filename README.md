@@ -9,7 +9,7 @@ These scripts are used to download outputs from the GLORYS model products availa
 
 https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/download?dataset=cmems_mod_glo_phy_my_0.083_P1D-m
 
-Here is more info about the GLORYS ocean reanalysis project:
+Here is more info about the GLORYS ocean reanalysis project by Mercator Ocean International:
 
 https://www.mercator-ocean.eu/en/ocean-science/glorys/
 
