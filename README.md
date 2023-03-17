@@ -5,11 +5,11 @@ from the Global Ocean Physics Reanalysis between 1/1/1993 to 12/31/2020
 
 by Greg Pelletier | gjpelletier@gmail.com) | https://github.com/gjpelletier/get_glorys
 
-These scripts are used to download from:
+These scripts are used to download from the GLORYS model outputs from the European Copernicus Marine Envornment Monitoring Service:
 
 https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/download?dataset=cmems_mod_glo_phy_my_0.083_P1D-m
 
-Here is more info about GLORYS by Mercator Ocean International:
+Here is more info about the GLORYS ocean reanalysis project:
 
 https://www.mercator-ocean.eu/en/ocean-science/glorys/
 
