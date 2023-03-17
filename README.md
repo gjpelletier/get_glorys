@@ -3,7 +3,7 @@ Download of GLORYS model outputs using Python, iPython, or Jupyter Notebooks in 
 Scripts to extract daily GLORYS model output
 from the Global Ocean Physics Reanalysis between 1/1/1993 to 12/31/2020
 
-by Greg Pelletier (gjpelletier@gmail.com) for standalone use (https://github.com/gjpelletier/get_glorys)
+by Greg Pelletier | gjpelletier@gmail.com) | https://github.com/gjpelletier/get_glorys
 
 These scripts are used to download from:
 
