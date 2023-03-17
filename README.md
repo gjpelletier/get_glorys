@@ -1,4 +1,4 @@
-# Scripts to download GLORYS ocean model outputs from Mercator Ocean International using Python, iPython, or Jupyter Notebooks in Google Colab
+# Scripts to download GLORYS ocean model outputs from data.marine.copernicus.eu
 
 Scripts to extract daily GLORYS model output
 from the Global Ocean Physics Reanalysis between 1/1/1993 to 12/31/2020
