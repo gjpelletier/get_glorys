@@ -29,10 +29,10 @@ Your username will be assigned when you establish your account. Your password sh
 After you have established an account, the following are the instructions for using this script:
 
 1) Edit the user input section below as needed, specify the following:
- 		- list of variables to be extracted from any combination, e.g. var_list = ["so","thetao","uo","vo","zos"]
+ 		- list of variables to be extracted
  		- west, east, south, and north extent of the bounding box to be extracted
   		- the name of the OUTPUT_DIRECTORY where the glorys data will be saved as output
- 		- the date_start and number_of_days of the period to be extracted (between 1/1/1993 and 12/31/2020)
+ 		- the date_start and number_of_days of the period to be extracted
 2) Run this script in python or ipython
 3) Enter your username and password when prompted
 4) During execution you sould see the progress of each daily file that is extracted during the period of interest 
