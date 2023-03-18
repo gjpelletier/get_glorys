@@ -9,7 +9,7 @@ by Greg Pelletier | gjpelletier@gmail.com) | https://github.com/gjpelletier/get_
 
 These scripts are used to download outputs from the GLORYS model products available from the European Copernicus Marine Environment Monitoring Service:
 
-https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/download?dataset=cmems_mod_glo_phy_my_0.083_P1D-m
+https://data.marine.copernicus.eu/
 
 Here is more info about the GLORYS ocean reanalysis project by Mercator Ocean International:
 
