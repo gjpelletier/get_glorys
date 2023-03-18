@@ -1,13 +1,13 @@
 
 # ----------
-# get_glorys_reanalysis_daily.py 
+# get_glorys_forecast_physics_daily.py 
 # 
-# Python script to extract daily GLORYS model output
-# from the Global Ocean Physics Reanalysis between 1/1/1993 to 12/31/2020
+# Python script to extract daily GLORYS model output of daily average salinity, theta, eastward and northward velocity, or sea surface height
+# from the Global Ocean Physics Analysis and Forecast between 11/1/2020 to present + 2 days in the future
 #
 # This script is used to download from:
 
-# https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/download?dataset=cmems_mod_glo_phy_my_0.083_P1D-m
+# https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_PHY_001_024/download
 
 # by Greg Pelletier (gjpelletier@gmail.com) (https://github.com/gjpelletier/get_glorys)
 # ----------
@@ -21,10 +21,10 @@
 # After you have established an account, the following are the instructions for using this script:
 #
 # 1) Edit the user input section below as needed, specify the following:
-# 		- list of variables to be extracted from any combination, e.g. var_list = ["so","thetao","uo","vo","zos"]
+# 		- list of variables to be extracted, e.g. var_list = ["so"], ["thetao"], ["uo","vo"], or ["zos"] 
 # 		- west, east, south, and north extent of the bounding box to be extracted
 #  		- the name of the OUTPUT_DIRECTORY where the glorys data will be saved as output
-# 		- the date_start and number_of_days of the period to be extracted (between 1/1/1993 and 12/31/2020)
+# 		- the date_start and number_of_days of the period to be extracted (between 11/1/2020 and preseent + 2 days)
 # 2) Run this script in python or ipython
 # 3) Enter your username and password when prompted
 # 4) During execution you sould see the progress of each daily file that is extracted during the period of interest 
@@ -41,12 +41,12 @@
 #   Otherwise (if there is no previous installation of motuclient), 
 #   type in the following:
 #      $ python -m pip install motuclient
-#   That command should install and display motuclient package v1.8.4 (Oct. 2019). 
+#   That command should install and display motuclient package v1.8.8 
 #   To display the version:
 #      $ python -m motuclient --version
-#   If that command does not return: "motuclient-python v1.8.X" ("X" >= "4"), 
+#   If that command does not return: "motuclient-python v1.8.X" ("X" >= "8"), 
 #   then type in the following:
-#     $ python -m pip install motuclient==1.8.4
+#     $ python -m pip install motuclient==1.8.8
 
 # - - -
 # IMPORT REQUIRED PYTHON PACKAGES
@@ -69,24 +69,20 @@ import motuclient
 
 # - - -
 # specify the directory where the extracted nc files will be saved:
-OUTPUT_DIRECTORY = '/mnt/c/data/glorys/reanalysis/'         # include the ending '/'
+OUTPUT_DIRECTORY = '/mnt/c/data/glorys/forecast_physics/'         # include the ending '/'
 
 # - - -
-# Edit the var_list as needed to download any subset of the available variables listed below:
-var_list = ["so","thetao","uo","vo","zos"] 
+# Any one of the following may be used for var_list to select the variables to download:
+# var_list = ["so"] 
+var_list = ["thetao"] 
+# var_list = ["uo","vo"] 
+# var_list = ["zos"] 
 
-# any of the following variables may be incuded in var_list:
+# where:
 # so = Seawater salinity [10^-3]
 # thetao = Seawater potential temperature [°C]
-# uo = Eastward seawater velocity [m/s] 
-# vo = Northward seawater velocity [m/s]
+# uo,vo = Eastward seawater velocity (uo) and Northward seawater velocity (vo) [m/s] 
 # zos = Sea surface height above geoid [m]
-# bottomT = sea water potential temperature at sea floor [°C]
-# mlotst = Ocean mixed layer thickness defined by sigma theta [m]
-# siconc = Sea ice area fraction
-# sithick = Sea ice thickness [m]
-# usi = Eastward sea ice velocity [m/s]
-# vsi = Northward sea ice velocity [m/s]
 
 # specify spatial limits (default below is Parker MacCready's boundary for the boundary of the LiveOcean model):
 north = 53              # -90 to 90 degN          
@@ -95,12 +91,9 @@ west = -131             # -180 to 180 or 0 to 360 degE
 east = -122             # -180 to 180 or 0 to 360 degE
 
 # -  
-# Specify the date_start and number_of_days from 1/1/1993 - 12/31/2020
-# date_start = '2015-12-06 00:00:00'      # ISO formatted string for the starting datetime for the data to be downloaded (starting hh:mm:ss should be 00:00:00)
-# number_of_days = 26
-
-date_start = '2011-01-01 00:00:00'      # ISO formatted string for the starting datetime for the data to be downloaded (starting hh:mm:ss should be 00:00:00)
-number_of_days = 365+366
+# Specify the date_start and number_of_days from 11/1/2020 - present + 2 days in the future
+date_start = '2021-01-01 00:00:00'      # ISO formatted string for the starting datetime for the data to be downloaded (starting hh:mm:ss should be 00:00:00)
+number_of_days = 730
 
 
 # END OF USER INPUTS
@@ -170,8 +163,8 @@ PASSWORD = getpass.getpass('Enter your password: ')
 
 # template dict that will be updated with new dates and output filenames during each iteration of the loop through days
 data_request_options_dict_manual = {
-    "service_id": "GLOBAL_MULTIYEAR_PHY_001_030-TDS",
-    "product_id": "cmems_mod_glo_phy_my_0.083_P1D-m",
+    "service_id": "GLOBAL_ANALYSISFORECAST_PHY_001_024-TDS",
+    "product_id": " ",
     "date_min": " ",
     "date_max": " ",
     "longitude_min": float(west),
@@ -181,13 +174,22 @@ data_request_options_dict_manual = {
     "depth_min": 0.49402499198913574,
     "depth_max": 5727.9169921875,
     "variable": var_list,
-    "motu": "https://my.cmems-du.eu/motu-web/Motu",
+    "motu": "https://nrt.cmems-du.eu/motu-web/Motu",
     "out_dir": OUTPUT_DIRECTORY,
     "out_name": " ",
     "auth_mode": "cas",
     "user": USERNAME,
     "pwd": PASSWORD
 }
+
+if var_list[0] == 'so':
+    data_request_options_dict_manual["product_id"] = "cmems_mod_glo_phy-so_anfc_0.083deg_P1D-m"
+elif var_list[0] == 'thetao':
+    data_request_options_dict_manual["product_id"] = "cmems_mod_glo_phy-thetao_anfc_0.083deg_P1D-m"
+elif var_list[0] == 'uo' or var_list[0] == 'vo':
+    data_request_options_dict_manual["product_id"] = "cmems_mod_glo_phy-cur_anfc_0.083deg_P1D-m"
+elif var_list[0] == 'zos':
+    data_request_options_dict_manual["product_id"] = "cmems_mod_glo_phy_anfc_0.083deg_P1D-m"
 
 # - - -
 # loop over all datetimes in dt_list
@@ -200,7 +202,15 @@ tt1 = time.time()                           # tic for total elapsed time
 force_overwrite = True                      # overwrite any already existing nc files in the output folder that have the same names
 for dt in dt_list:
 
-    out_fn = datetime.strftime(dt, 'glorys_%Y_%m_%d') + '.nc'
+    if var_list[0] == 'so':
+        out_fn = datetime.strftime(dt, 'glorys_so_%Y_%m_%d') + '.nc'
+    elif var_list[0] == 'thetao':
+        out_fn = datetime.strftime(dt, 'glorys_thetao_%Y_%m_%d') + '.nc'
+    elif var_list[0] == 'uo' or var_list[0] == 'vo':
+        out_fn = datetime.strftime(dt, 'glorys_uovo_%Y_%m_%d') + '.nc'
+    elif var_list[0] == 'zos':
+        out_fn = datetime.strftime(dt, 'glorys_zos_%Y_%m_%d') + '.nc'
+
     dstr_min = dt.strftime('%Y-%m-%d 00:00:00')
     dstr_max = dt.strftime('%Y-%m-%d 23:59:59')
 
