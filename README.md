@@ -1,7 +1,9 @@
 # Scripts to download GLORYS ocean model outputs from https://data.marine.copernicus.eu
 
-Scripts to extract daily GLORYS model output
-from the Global Ocean Physics Reanalysis between 1/1/1993 to 12/31/2020
+Scripts to extract daily GLORYS model outputs from the following model products:
+- Global Ocean Physics Reanalysis (1/1/1993 to 12/31/2020)
+- Global Ocean Physics Analysis and Forecast (11/1/2019 to present + 2 days forecast)
+- Global Ocean Biogeochemistry Analysis and Forecast (11/1/2020 to present + 6 days forecast)
 
 by Greg Pelletier | gjpelletier@gmail.com) | https://github.com/gjpelletier/get_glorys
 
@@ -13,10 +15,11 @@ Here is more info about the GLORYS ocean reanalysis project by Mercator Ocean In
 
 https://www.mercator-ocean.eu/en/ocean-science/glorys/
 
-Two versions of the scripts are available as follows for use with different computing platforms:
+Two versions of each script are available as follows for use with either Python/iPython (.py) or Jupyter Notebooks in Google Colab (.ipynb):
 
-- get_glorys_reanalysis_daily.py is written for use in Python or iPython
-- get_glorys_reanalysis_daily.ipynb is a Jupyter notebook that is set up as Google Colab notebook to save glorys outputs in netcdf files directly to your Google drive
+- get_glorys_reanalysis_daily downloads outputs from the Global Ocean Physics Reanalysis (1/1/1993 to 12/31/2020)
+- get_glorys_forecast_physics_daily downloads outputs from the Global Ocean Physics Analysis and Forecast (11/1/2019 to present + 2 days forecast)
+- get_glorys_forecast_biogeochem_daily downloads outputs from the Global Ocean Biogeochemistry Analysis and Forecast (11/1/2020 to present + 6 days forecast)
 
 INSTRUCTIONS
 
