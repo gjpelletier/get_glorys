@@ -9,7 +9,7 @@
 
 # https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/download?dataset=cmems_mod_glo_phy_my_0.083_P1D-m
 
-# by Greg Pelletier (gjpelletier@gmail.com) (https://github.com/gjpelletier/get_glorys)
+# by Greg Pelletier | gjpelletier@gmail.com | https://github.com/gjpelletier/get_glorys
 # ----------
 
 # - - -
@@ -91,16 +91,13 @@ var_list = ["so","thetao","uo","vo","zos"]
 # specify spatial limits (default below is Parker MacCready's boundary for the boundary of the LiveOcean model):
 north = 53              # -90 to 90 degN          
 south = 39              # -90 to 90 degN
-west = -131             # -180 to 180 or 0 to 360 degE
-east = -122             # -180 to 180 or 0 to 360 degE
+west = -131             # -180 to 180 degE
+east = -122             # -180 to 180 degE
 
 # -  
 # Specify the date_start and number_of_days from 1/1/1993 - 12/31/2020
-# date_start = '2015-12-06 00:00:00'      # ISO formatted string for the starting datetime for the data to be downloaded (starting hh:mm:ss should be 00:00:00)
-# number_of_days = 26
-
 date_start = '2011-01-01 00:00:00'      # ISO formatted string for the starting datetime for the data to be downloaded (starting hh:mm:ss should be 00:00:00)
-number_of_days = 365+366
+number_of_days = 365
 
 
 # END OF USER INPUTS

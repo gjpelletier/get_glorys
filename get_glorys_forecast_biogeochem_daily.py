@@ -92,14 +92,13 @@ var_list = ["dissic","talk","si","po4","ph","spco2","o2","no3","fe","phyc","chl"
 # specify spatial limits (default below is Parker MacCready's boundary for the boundary of the LiveOcean model):
 north = 53              # -90 to 90 degN          
 south = 39              # -90 to 90 degN
-west = -131             # -180 to 180 or 0 to 360 degE
-east = -122             # -180 to 180 or 0 to 360 degE
+west = -131             # -180 to 180 degE
+east = -122             # -180 to 180 degE
 
 # -  
 # Specify the date_start and number_of_days from 11/1/2020 - present + 6 days
-
-date_start = '2020-11-02 00:00:00'      # ISO formatted string for the starting datetime for the data to be downloaded (starting hh:mm:ss should be 00:00:00)
-number_of_days = 29+31
+date_start = '2020-12-01 00:00:00'      # ISO formatted string for the starting datetime for the data to be downloaded (starting hh:mm:ss should be 00:00:00)
+number_of_days = 31
 
 
 # END OF USER INPUTS

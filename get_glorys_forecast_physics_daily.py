@@ -9,7 +9,7 @@
 
 # https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_PHY_001_024/download
 
-# by Greg Pelletier (gjpelletier@gmail.com) (https://github.com/gjpelletier/get_glorys)
+# by Greg Pelletier | gjpelletier@gmail.com | https://github.com/gjpelletier/get_glorys
 # ----------
 
 # - - -
@@ -87,13 +87,13 @@ var_list = ["thetao"]
 # specify spatial limits (default below is Parker MacCready's boundary for the boundary of the LiveOcean model):
 north = 53              # -90 to 90 degN          
 south = 39              # -90 to 90 degN
-west = -131             # -180 to 180 or 0 to 360 degE
-east = -122             # -180 to 180 or 0 to 360 degE
+west = -131             # -180 to 180 degE
+east = -122             # -180 to 180 degE
 
 # -  
 # Specify the date_start and number_of_days from 11/1/2020 - present + 2 days in the future
 date_start = '2021-01-01 00:00:00'      # ISO formatted string for the starting datetime for the data to be downloaded (starting hh:mm:ss should be 00:00:00)
-number_of_days = 730
+number_of_days = 365
 
 
 # END OF USER INPUTS
