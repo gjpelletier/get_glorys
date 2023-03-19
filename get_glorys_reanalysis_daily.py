@@ -25,6 +25,7 @@
 # 		- west, east, south, and north extent of the bounding box to be extracted
 #  		- the name of the OUTPUT_DIRECTORY where the glorys data will be saved as output
 # 		- the date_start and number_of_days of the period to be extracted (between 1/1/1993 and 12/31/2020)
+#       - the min and max depths (dep_min and dep_max) (between 0 and 5728m)
 # 2) Run this script in python or ipython
 # 3) Enter your username and password when prompted
 # 4) During execution you sould see the progress of each daily file that is extracted during the period of interest 
@@ -69,7 +70,7 @@ import motuclient
 
 # - - -
 # specify the directory where the extracted nc files will be saved:
-OUTPUT_DIRECTORY = '/mnt/c/data/glorys/reanalysis/'         # include the ending '/'
+OUTPUT_DIRECTORY = '/mnt/c/data/glorys/reanalysis_daily/'         # include the ending '/'
 
 # - - -
 # Edit the var_list as needed to download any subset of the available variables listed below:
@@ -98,6 +99,12 @@ east = -122             # -180 to 180 degE
 # Specify the date_start and number_of_days from 1/1/1993 - 12/31/2020
 date_start = '2011-01-01 00:00:00'      # ISO formatted string for the starting datetime for the data to be downloaded (starting hh:mm:ss should be 00:00:00)
 number_of_days = 365
+
+# -  
+# Specify the min and max depths to download (0 - 5728m)
+dep_min = 0
+dep_max = 5728
+
 
 
 # END OF USER INPUTS
@@ -175,8 +182,8 @@ data_request_options_dict_manual = {
     "longitude_max": float(east),
     "latitude_min": float(south),
     "latitude_max": float(north),
-    "depth_min": 0.49402499198913574,
-    "depth_max": 5727.9169921875,
+    "depth_min": float(dep_min),
+    "depth_max": float(dep_max),
     "variable": var_list,
     "motu": "https://my.cmems-du.eu/motu-web/Motu",
     "out_dir": OUTPUT_DIRECTORY,
