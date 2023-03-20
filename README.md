@@ -37,7 +37,7 @@ After you have established an account, the following are the instructions for us
 2) Run this script in python or ipython
 3) Enter your username and password when prompted
 4) During execution you sould see the progress of each daily file that is extracted during the period of interest 
-   from beginning to end. Each nc file name has the format glorys_yyyy_MM_dd.nc to indicate the date stamp
+   from beginning to end. Each nc file name has the format glorys_yyyy_MM_dd.nc (daily) or glorys_yyyy_MM.nc (monthly) to indicate the date stamp
 
 These script use the manual dictionary method that is described at the following Web page:
 https://help.marine.copernicus.eu/en/articles/5211063-how-to-use-the-motuclient-within-python-environment
