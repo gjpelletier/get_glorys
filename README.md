@@ -15,7 +15,7 @@ Here is more info about the GLORYS ocean reanalysis project by Mercator Ocean In
 
 https://www.mercator-ocean.eu/en/ocean-science/glorys/
 
-Two versions of each script are available as follows for use with either Python/iPython (.py) or Jupyter Notebooks in Google Colab (.ipynb):
+Two versions of each daily and monthly script are available as follows for use with either Python/iPython (.py) or Jupyter Notebooks in Google Colab (.ipynb):
 
 - get_glorys_reanalysis_daily and get_glorys_reanalysis_monthly .py and .ipynb downloads from the Global Ocean Physics Reanalysis (1/1/1993 to 12/31/2020)
 - get_glorys_forecast_physics_daily get_glorys_forecast_physics_monthly .py and .ipynb downloads from the Global Ocean Physics Analysis and Forecast (11/1/2020 to present + 2 days forecast)
