@@ -34,7 +34,7 @@ After you have established an account, the following are the instructions for us
  	- the name of the OUTPUT_DIRECTORY where the glorys data will be saved as output
   	- the date_start and number_of_days of the period to be extracted
    - the min and max depths (dep_min and dep_max) (between 0 and 5728m)
-2) Run this script in python or ipython
+2) Run this script in python, ipython, Jupyter, or Google Colab
 3) Enter your username and password when prompted
 4) During execution you sould see the progress of each daily file that is extracted during the period of interest 
    from beginning to end. Each nc file name has the format glorys_yyyy_MM_dd.nc (daily) or glorys_yyyy_MM.nc (monthly) to indicate the date stamp
